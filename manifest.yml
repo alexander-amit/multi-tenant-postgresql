@@ -1,0 +1,13 @@
+---
+applications:
+- name: multitenant-poc
+  buildpack: java_buildpack
+  instances: 1
+  memory: 1G
+  host: multitenant-poc
+  env:
+    APP_LOGGING_LEVEL: DEBUG
+    SPRING_PROFILES_ACTIVE: cloud
+  path: target/multitenant-0.0.1-SNAPSHOT.jar
+  services:
+    - postgresql-poc
